@@ -1,7 +1,7 @@
 {
   "type": "variables_set",
   "fields": {
-    "VAR": "drift"
+    "VAR": "C1"
   },
   "value_inputs": {
     "VALUE": {
@@ -15,7 +15,7 @@
   "next": {
     "type": "variables_set",
     "fields": {
-      "VAR": "threshold"
+      "VAR": "C2"
     },
     "value_inputs": {
       "VALUE": {
@@ -27,48 +27,164 @@
       }
     },
     "next": {
-      "type": "controls_if",
+      "type": "variables_set",
+      "fields": {
+        "VAR": "C3"
+      },
       "value_inputs": {
-        "IF0": {
-          "type": "logic_compare",
+        "VALUE": {
+          "type": "text_prompt_ext",
           "fields": {
-            "OP": "GT"
-          },
-          "value_inputs": {
-            "A": {
-              "type": "variables_get",
-              "fields": {
-                "VAR": "drift"
-              }
-            },
-            "B": {
-              "type": "variables_get",
-              "fields": {
-                "VAR": "threshold"
-              }
-            }
+            "TYPE": "NUMBER",
+            "TEXT": ""
           }
         }
       },
-      "statement_inputs": {
-        "DO0": {
-          "type": "text_print",
-          "value_inputs": {
-            "TEXT": {
-              "type": "text",
-              "fields": {
-                "TEXT": "Explosion"
-              }
+      "next": {
+        "type": "variables_set",
+        "fields": {
+          "VAR": "threshold1"
+        },
+        "value_inputs": {
+          "VALUE": {
+            "type": "text_prompt_ext",
+            "fields": {
+              "TYPE": "NUMBER",
+              "TEXT": ""
             }
           }
         },
-        "ELSE": {
-          "type": "text_print",
+        "next": {
+          "type": "variables_set",
+          "fields": {
+            "VAR": "threshold2"
+          },
           "value_inputs": {
-            "TEXT": {
-              "type": "text",
+            "VALUE": {
+              "type": "text_prompt_ext",
               "fields": {
-                "TEXT": "No Explosion"
+                "TYPE": "NUMBER",
+                "TEXT": ""
+              }
+            }
+          },
+          "next": {
+            "type": "variables_set",
+            "fields": {
+              "VAR": "threshold3"
+            },
+            "value_inputs": {
+              "VALUE": {
+                "type": "text_prompt_ext",
+                "fields": {
+                  "TYPE": "NUMBER",
+                  "TEXT": ""
+                }
+              }
+            },
+            "next": {
+              "type": "controls_if",
+              "value_inputs": {
+                "IF0": {
+                  "type": "logic_operation",
+                  "fields": {
+                    "OP": "AND"
+                  },
+                  "value_inputs": {
+                    "A": {
+                      "type": "logic_operation",
+                      "fields": {
+                        "OP": "AND"
+                      },
+                      "value_inputs": {
+                        "A": {
+                          "type": "logic_compare",
+                          "fields": {
+                            "OP": "GT"
+                          },
+                          "value_inputs": {
+                            "A": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": "C1"
+                              }
+                            },
+                            "B": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": "threshold1"
+                              }
+                            }
+                          }
+                        },
+                        "B": {
+                          "type": "logic_compare",
+                          "fields": {
+                            "OP": "GT"
+                          },
+                          "value_inputs": {
+                            "A": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": "C2"
+                              }
+                            },
+                            "B": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": "threshold2"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "B": {
+                      "type": "logic_compare",
+                      "fields": {
+                        "OP": "GT"
+                      },
+                      "value_inputs": {
+                        "A": {
+                          "type": "variables_get",
+                          "fields": {
+                            "VAR": "C3"
+                          }
+                        },
+                        "B": {
+                          "type": "variables_get",
+                          "fields": {
+                            "VAR": "threshold3"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "statement_inputs": {
+                "DO0": {
+                  "type": "text_print",
+                  "value_inputs": {
+                    "TEXT": {
+                      "type": "text",
+                      "fields": {
+                        "TEXT": "Aligned"
+                      }
+                    }
+                  }
+                },
+                "ELSE": {
+                  "type": "text_print",
+                  "value_inputs": {
+                    "TEXT": {
+                      "type": "text",
+                      "fields": {
+                        "TEXT": "Not Aligned"
+                      }
+                    }
+                  }
+                }
               }
             }
           }

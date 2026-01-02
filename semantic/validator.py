@@ -65,7 +65,10 @@ class CapabilityValidator:
             if "name" not in inp or "type" not in inp:
                 raise CapabilityError("invalid_input_schema")
 
-    def _validate_derived(self, derived: List[Dict]):
+    # -----------------------------
+    # Derived (ARITY FIX APPLIED HERE)
+    # -----------------------------
+    def _validate_derived(self, derived):
         if not derived:
             return
 
@@ -76,43 +79,36 @@ class CapabilityValidator:
             if not expr:
                 raise CapabilityError("missing_expression")
 
-            op = expr["op"]
+            op = expr.get("op")
+            args = expr.get("args", [])
 
-            # Arithmetic
-            if op in {"+", "-", "*", "/"}:
-                self._require("math_arithmetic")
-                continue
+            # ---------- FIX-1: OPERATOR ARITY VALIDATION ----------
+            ARITY = {
+                "+": 2,
+                "-": 2,
+                "*": 2,
+                "/": 2,
+                "mod": 2,
+                "min": 1,
+                "max": 1,
+                "abs": 1,
+                "len": 1,
+                "to_string": 1,
+                "to_number": 1,
+            }
 
-            # Unary math
-            if op == "abs":
-                self._require("math_single")
-                continue
+            if op in ARITY:
+                if not isinstance(args, list):
+                    raise CapabilityError(
+                        f"invalid_args: op '{op}' expects list args"
+                    )
 
-            # Modulo
-            if op == "mod":
-                self._require("math_modulo")
-                continue
-
-            # Min / Max
-            if op in {"min", "max"}:
-                self._require("math_minmax")
-                continue
-
-            # Length
-            if op == "len":
-                self._require("text_length")
-                continue
-
-            # Type conversions
-            if op == "to_string":
-                self._require("text_to_string")
-                continue
-
-            if op == "to_number":
-                self._require("text_to_number")
-                continue
-
-            raise CapabilityError(f"unsupported_op: {op}")
+                expected = ARITY[op]
+                if len(args) != expected:
+                    raise CapabilityError(
+                        f"invalid_arity: op '{op}' expects {expected} args, got {len(args)}"
+                    )
+            # ------------------------------------------------------
 
 
     def _validate_condition(self, condition: Dict):

@@ -1,5 +1,9 @@
-drift = None
-threshold = None
+C1 = None
+C2 = None
+C3 = None
+threshold1 = None
+threshold2 = None
+threshold3 = None
 
 def text_prompt(msg):
   try:
@@ -8,7 +12,11 @@ def text_prompt(msg):
     return input(msg)
 
 
-drift = float(text_prompt(''))
-threshold = float(text_prompt(''))
-if drift > threshold:
-    print('Explosion')
+C1 = float(text_prompt(''))
+C2 = float(text_prompt(''))
+C3 = float(text_prompt(''))
+threshold1 = float(text_prompt(''))
+threshold2 = float(text_prompt(''))
+threshold3 = float(text_prompt(''))
+if C1 > threshold1 and C2 > threshold2 and C3 > threshold3:
+    print('Aligned')

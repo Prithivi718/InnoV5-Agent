@@ -6,58 +6,6 @@
       "description": "Alignment Regret Minimization, Minimize regret across intent paths."
     },
     {
-      "problem_id": "PID-7365",
-      "description": "Oversight System Bankruptcy, Accumulated failures collapse oversight."
-    },
-    {
-      "problem_id": "PID-7366",
-      "description": "Strategic Alignment Sacrifice, Disable capability to restore alignment."
-    },
-    {
-      "problem_id": "PID-7367",
-      "description": "Intertemporal Alignment Trade-Off, Trade performance for long-term safety."
-    },
-    {
-      "problem_id": "PID-7368",
-      "description": "Alignment Insurance Trigger, Insurance activates on critical drift."
-    },
-    {
-      "problem_id": "PID-7369",
-      "description": "Nonlinear Misalignment Escalation, Drift escalates nonlinearly."
-    },
-    {
-      "problem_id": "PID-7370",
-      "description": "Alignment Option Valuation, Value alignment interventions that expire."
-    },
-    {
-      "problem_id": "PID-7371",
-      "description": "Aligned Equilibrium Seeking, Seek stable aligned equilibrium."
-    },
-    {
-      "problem_id": "PID-7372",
-      "description": "Alignment Cliff Avoidance, Avoid irreversible alignment cliffs."
-    },
-    {
-      "problem_id": "PID-7373",
-      "description": "Endgame Alignment Reserves, Preserve capacity for final correction."
-    },
-    {
-      "problem_id": "PID-7374",
-      "description": "Hidden Objective Lock-In, Latent objective dominates permanently."
-    },
-    {
-      "problem_id": "PID-7375",
-      "description": "Alignment Debt Restructuring, Resolve accumulated alignment debt."
-    },
-    {
-      "problem_id": "PID-7376",
-      "description": "Alignment Stability Basin, Steer system into stable basin."
-    },
-    {
-      "problem_id": "PID-7377",
-      "description": "Delayed Misalignment Explosion, Suppressed drift explodes late."
-    },
-    {
       "problem_id": "PID-7378",
       "description": "Formal Alignment Proof, Prove alignment formally."
     }

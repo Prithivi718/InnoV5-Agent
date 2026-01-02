@@ -1,7 +1,14 @@
-"python": """intent_path = int(input())
-regret = int(input())
+R1 = None
+R2 = None
 
-if intent_path == 1:
-    regret = 0
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
 
-print(regret)
+
+R1 = float(text_prompt(''))
+R2 = float(text_prompt(''))
+if R1 < R2:
+    print('select intent path 1')

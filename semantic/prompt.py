@@ -46,6 +46,11 @@ def system_prompt() -> str:
         "4) actions:\n"
         "   - Only allowed action type: print\n\n"
 
+        "================ IMPORTANT: ================\n"
+        "- Do NOT use '+' with a single argument.\n"
+        "- Aggregation over a list/vector (sum, min, max) must be expressed as a dedicated operation.\n\n"
+
+
         "================ CRITICAL CONSTRAINTS ================\n"
         "- NEVER use comparison operators inside derived expressions.\n"
         "- NEVER compute boolean values as derived variables.\n"

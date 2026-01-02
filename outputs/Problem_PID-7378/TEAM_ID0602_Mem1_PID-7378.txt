@@ -1,5 +1,22 @@
-def prove_alignment():
-    print("Proving alignment formally is a process of ensuring that the system meets specified requirements.")
-    print("This involves formal verification techniques such as model checking, theorem proving, and static analysis.")
+C1 = None
+C2 = None
+C3 = None
+threshold1 = None
+threshold2 = None
+threshold3 = None
 
-prove_alignment()
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+C1 = float(text_prompt(''))
+C2 = float(text_prompt(''))
+C3 = float(text_prompt(''))
+threshold1 = float(text_prompt(''))
+threshold2 = float(text_prompt(''))
+threshold3 = float(text_prompt(''))
+if C1 > threshold1 and C2 > threshold2 and C3 > threshold3:
+    print('Aligned')
