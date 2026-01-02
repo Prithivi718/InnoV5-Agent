@@ -1,0 +1,14 @@
+TrustLevel = None
+Effort = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+TrustLevel = float(text_prompt(''))
+Effort = float(text_prompt(''))
+if TrustLevel < 50 and Effort > 50:
+    print('Reinvest effort to rebuild trust')

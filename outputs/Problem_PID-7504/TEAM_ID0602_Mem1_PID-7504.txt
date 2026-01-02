@@ -1,0 +1,13 @@
+collaboration_status = None
+
+def handle_collaboration(collaboration_status):
+  if collaboration_status != 0:
+    collaboration_status = 1
+    print('Collaboration restored.')
+  else:
+    collaboration_status = 0
+    print('Governance override applied.')
+
+
+collaboration_status = 0
+handle_collaboration(collaboration_status)

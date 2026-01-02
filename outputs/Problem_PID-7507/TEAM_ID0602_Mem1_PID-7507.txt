@@ -1,0 +1,14 @@
+StressLevel = None
+CollaborationScore = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+StressLevel = text_prompt('')
+CollaborationScore = text_prompt('')
+if StressLevel > 5 and CollaborationScore < 70:
+    print('Unstable')

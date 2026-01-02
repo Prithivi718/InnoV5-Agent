@@ -1,0 +1,59 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+    <block type="procedures_defnoreturn" id="r1" x="20" y="20">
+      <field name="NAME">handle_role</field>
+      <mutation>
+        <arg name="role"></arg>
+      </mutation>
+      <statement name="STACK">
+        <block type="controls_if" id="r2">
+          <mutation else="0"></mutation>
+          <value name="IF0">
+            <block type="logic_compare" id="r3">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="r4">
+                  <field name="VAR">role</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="text" id="r5">
+                  <field name="TEXT">collaborator</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="text_print" id="r6">
+              <value name="TEXT">
+                <block type="text" id="r7">
+                  <field name="TEXT">Collaboration with role: collaborator</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+  
+    <block type="variables_set" id="r8" x="20" y="260">
+      <field name="VAR">role</field>
+      <value name="VALUE">
+        <block type="text" id="r9">
+          <field name="TEXT"></field>
+        </block>
+      </value>
+      <next>
+        <block type="procedures_callnoreturn" id="r10">
+          <mutation name="handle_role">
+            <arg name="role"></arg>
+          </mutation>
+          <value name="ARG0">
+            <block type="variables_get" id="r11">
+              <field name="VAR">role</field>
+            </block>
+          </value>
+        </block>
+      </next>
+    </block>
+  </xml>
+  

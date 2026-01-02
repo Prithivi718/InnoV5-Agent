@@ -1,0 +1,12 @@
+TrustLoss = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+TrustLoss = text_prompt('')
+if TrustLoss > 0:
+    print('Mitigate Trust Loss')

@@ -1,0 +1,69 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+    <block type="procedures_defnoreturn" id="a1" x="20" y="20">
+      <field name="NAME">audit_commitment</field>
+      <mutation>
+        <arg name="early_handoffs"></arg>
+      </mutation>
+      <statement name="STACK">
+        <block type="controls_if" id="a2">
+          <mutation else="0"></mutation>
+          <value name="IF0">
+            <block type="logic_compare" id="a3">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="a4">
+                  <field name="VAR">early_handoffs</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="a5">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="variables_set" id="a6">
+              <field name="VAR">binding_result</field>
+              <value name="VALUE">
+                <block type="text" id="a7">
+                  <field name="TEXT">Final rules bind early handoffs</field>
+                </block>
+              </value>
+              <next>
+                <block type="text_print" id="a8">
+                  <value name="TEXT">
+                    <block type="variables_get" id="a9">
+                      <field name="VAR">binding_result</field>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+  
+    <block type="variables_set" id="a10" x="20" y="300">
+      <field name="VAR">early_handoffs</field>
+      <value name="VALUE">
+        <block type="math_number" id="a11">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <next>
+        <block type="procedures_callnoreturn" id="a12">
+          <mutation name="audit_commitment">
+            <arg name="early_handoffs"></arg>
+          </mutation>
+          <value name="ARG0">
+            <block type="variables_get" id="a13">
+              <field name="VAR">early_handoffs</field>
+            </block>
+          </value>
+        </block>
+      </next>
+    </block>
+  </xml>
+  

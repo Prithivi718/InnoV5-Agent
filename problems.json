@@ -2,12 +2,64 @@
   "team_id": "TEAM_ID0602",
   "problems": [
     {
-      "problem_id": "PID-7364",
-      "description": "Alignment Regret Minimization, Minimize regret across intent paths."
+      "problem_id": "PID-7499",
+      "description": "Trust Hedging Portfolio, Hedge against future breakdowns."
     },
     {
-      "problem_id": "PID-7378",
-      "description": "Formal Alignment Proof, Prove alignment formally."
+      "problem_id": "PID-7500",
+      "description": "Collaboration Reinvestment, Reinvest effort to rebuild trust."
+    },
+    {
+      "problem_id": "PID-7501",
+      "description": "Trust Shock Propagation, Shock propagates across roles."
+    },
+    {
+      "problem_id": "PID-7502",
+      "description": "Endgame Collaboration Binding, Final rules bind early handoffs."
+    },
+    {
+      "problem_id": "PID-7503",
+      "description": "Trust Recoverability Frontier, Compute recoverability frontier."
+    },
+    {
+      "problem_id": "PID-7504",
+      "description": "Governance Override for Collaboration, Override to restore collaboration."
+    },
+    {
+      "problem_id": "PID-7505",
+      "description": "Counterfactual Collaboration Replay, Replay collaboration with altered roles."
+    },
+    {
+      "problem_id": "PID-7506",
+      "description": "Trust Insurance Pool, Pool mitigates catastrophic trust loss."
+    },
+    {
+      "problem_id": "PID-7507",
+      "description": "Collaboration Stability Under Stress, Test collaboration under stress."
+    },
+    {
+      "problem_id": "PID-7508",
+      "description": "Endgame Opportunity Cost, Cost of avoided collaboration choice."
+    },
+    {
+      "problem_id": "PID-7509",
+      "description": "Multi-Human Coordination Game, Coordinate multiple humans with AI."
+    },
+    {
+      "problem_id": "PID-7510",
+      "description": "Latent Collaboration Effects, Latent issues surface late."
+    },
+    {
+      "problem_id": "PID-7511",
+      "description": "Shared Accountability Proof, Prove accountability formally."
+    },
+    {
+      "problem_id": "PID-7512",
+      "description": "Collaboration Resilience Index, Compute resilience to breakdown."
+    },
+    {
+      "problem_id": "PID-7513",
+      "description": "Collaboration Stress Horizon, Stress-test full horizon."
     }
   ]
 }

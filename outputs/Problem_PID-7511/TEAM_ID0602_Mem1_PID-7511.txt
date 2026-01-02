@@ -1,0 +1,13 @@
+accountant1 = None
+accountant2 = None
+
+def compare_accountants(accountant1, accountant2):
+  if accountant1 == accountant2:
+    print('Accountants are equal.')
+  else:
+    print('Accountants are not equal.')
+
+
+accountant1 = ''
+accountant2 = ''
+compare_accountants(accountant1, accountant2)

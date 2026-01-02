@@ -1,0 +1,9 @@
+latent_issue = None
+
+def detect_latent_collaboration_effect(latent_issue):
+  if latent_issue:
+    print('Latent collaboration effects can lead to unexpected issues surfacing later.')
+
+
+latent_issue = True
+detect_latent_collaboration_effect(latent_issue)
