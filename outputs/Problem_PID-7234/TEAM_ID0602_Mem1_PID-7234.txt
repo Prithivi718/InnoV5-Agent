@@ -1,0 +1,8 @@
+state = None
+optimized_state = None
+
+
+state = 0
+optimized_state = (state / 10) * 2
+print('Optimized state:')
+print(optimized_state)

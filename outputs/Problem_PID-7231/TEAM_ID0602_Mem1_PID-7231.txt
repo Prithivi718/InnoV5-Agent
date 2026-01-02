@@ -1,0 +1,6 @@
+governance_ok = None
+
+
+governance_ok = 0
+if governance_ok == 0:
+  print('Decision Governance Failure: Governance constraints violated')

@@ -45,7 +45,7 @@ def run_single_test(problem_text: str):
     block_tree = compiler.compile(semantic_plan)
 
     BLOCK_TREE_OUT.parent.mkdir(parents=True, exist_ok=True)
-    BLOCK_TREE_OUT.write_text(json.dumps(block_tree, indent=2))
+    BLOCK_TREE_OUT.write_text(json.dumps(block_tree, indent=2), encoding='utf-8')
     print("Wrote block_tree.json")
 
     run(["node", "generate_xml.js"], cwd=ROOT / "assembler")
@@ -57,15 +57,29 @@ def run_single_test(problem_text: str):
 def run_fallback(problem_dir: Path, team_id: str, pid: str, description: str):
     print("⚠️ Running LLM fallback pipeline")
 
-    xml, python_code = generate_fallback_outputs(description)
+    try:
+        xml, python_code = generate_fallback_outputs(description)
+    except Exception as e:
+        print(f"❌ Fallback generation failed: {e}")
+        xml = "<xml></xml>"
+        python_code = f"# Fallback generation failed\n# Error: {e}\n"
 
-    xml_dst = problem_dir / f"{team_id}_Mem2_{pid}.xml"
-    py_dst = problem_dir / f"{team_id}_Mem2_{pid}.txt"
-    bug_dst = problem_dir / f"{team_id}_Mem2_{pid}_bug.txt"
+    xml_dst = problem_dir / f"{team_id}_Mem1_{pid}.xml"
+    py_dst = problem_dir / f"{team_id}_Mem1_{pid}.txt"
+    bug_dst = problem_dir / f"{team_id}_Mem1_{pid}_bug.txt"
 
-    xml_dst.write_text(xml)
-    py_dst.write_text(python_code)
-    bug_dst.write_text("Generated via fallback LLM (no validation)\n")
+    try:
+        xml_dst.write_text(xml, encoding='utf-8')
+        py_dst.write_text(python_code, encoding='utf-8')
+        bug_dst.write_text("Generated via fallback LLM (no validation)\n", encoding='utf-8')
+    except UnicodeEncodeError as e:
+        # Last resort: replace problematic characters
+        print(f"⚠️ Unicode encoding issue detected, applying safe encoding for {pid}")
+        python_code_safe = python_code.encode('utf-8', errors='replace').decode('utf-8')
+        xml_safe = xml.encode('utf-8', errors='replace').decode('utf-8')
+        xml_dst.write_text(xml_safe, encoding='utf-8')
+        py_dst.write_text(python_code_safe, encoding='utf-8')
+        bug_dst.write_text(f"Generated via fallback LLM (no validation)\nUnicode issues handled: {e}\n", encoding='utf-8')
 
     print(f"🟡 Fallback output written for {pid}")
     show_notification(f"FallBack Completed", f"Fallback output written for {pid}")
@@ -127,7 +141,7 @@ def process_problem(problem: dict, team_id: str):
         block_tree = compiler.compile(semantic_plan)
 
         BLOCK_TREE_OUT.parent.mkdir(parents=True, exist_ok=True)
-        BLOCK_TREE_OUT.write_text(json.dumps(block_tree, indent=2))
+        BLOCK_TREE_OUT.write_text(json.dumps(block_tree, indent=2), encoding='utf-8')
 
         show_notification(f"Block Tree", "block-tree.json Generated & written")
 
@@ -155,13 +169,13 @@ def process_problem(problem: dict, team_id: str):
         xml_src = ROOT / "assembler" / "output" / "program.xml"
         py_src = ROOT / "runner" / "output" / "result.txt"
 
-        xml_dst = problem_dir / f"{team_id}_Mem2_{pid}.xml"
-        py_dst = problem_dir / f"{team_id}_Mem2_{pid}.txt"
-        bug_dst = problem_dir / f"{team_id}_Mem2_{pid}_bug.txt"
+        xml_dst = problem_dir / f"{team_id}_Mem1_{pid}.xml"
+        py_dst = problem_dir / f"{team_id}_Mem1_{pid}.txt"
+        bug_dst = problem_dir / f"{team_id}_Mem1_{pid}_bug.txt"
 
-        xml_dst.write_text(xml_src.read_text())
-        py_dst.write_text(py_src.read_text())
-        bug_dst.write_text("No bugs detected\n")
+        xml_dst.write_text(xml_src.read_text(encoding='utf-8'), encoding='utf-8')
+        py_dst.write_text(py_src.read_text(encoding='utf-8'), encoding='utf-8')
+        bug_dst.write_text("No bugs detected\n", encoding='utf-8')
 
         print(f"✅ Problem {pid} completed (strict)")
         show_notification(f"{pid} Completed", "Loading next problem...")

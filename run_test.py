@@ -28,7 +28,7 @@ if v["status"] != "ok":
 compiler = SemanticCompiler()
 block_tree = compiler.compile(semantic_plan)
 BLOCK_TREE_OUT.parent.mkdir(parents=True, exist_ok=True)
-BLOCK_TREE_OUT.write_text(json.dumps(block_tree, indent=2))
+BLOCK_TREE_OUT.write_text(json.dumps(block_tree, indent=2), encoding='utf-8')
 print("Wrote block_tree.json")
 
 # 3) Node XML generation

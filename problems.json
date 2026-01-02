@@ -2,10 +2,6 @@
   "team_id": "TEAM_ID0602",
   "problems": [
     {
-      "problem_id": "PID-7228",
-      "description": "Opportunity Cost of Autonomy, Cost of autonomous choice."
-    },
-    {
       "problem_id": "PID-7229",
       "description": "Autonomous Stress Test Extended, Stress-test extreme autonomy."
     },
@@ -60,6 +56,10 @@
     {
       "problem_id": "PID-7242",
       "description": "Delayed Autonomy Catastrophe, Minor early error causes late collapse."
+    },
+    {
+      "problem_id": "PID-7243",
+      "description": "Autonomy Commitment Audit, Audit early policy commitments."
     }
   ]
 }

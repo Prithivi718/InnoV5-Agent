@@ -1,0 +1,51 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+
+    <!-- governance_ok = input -->
+    <block type="variables_set" id="set_gov" x="100" y="100">
+      <field name="VAR">governance_ok</field>
+      <value name="VALUE">
+        <block type="math_number" id="gov_input">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <next>
+  
+        <!-- IF governance_ok == 0 -->
+        <block type="controls_if" id="if_gov_fail">
+          <mutation else="0"></mutation>
+  
+          <value name="IF0">
+            <block type="logic_compare" id="cmp_gov">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="get_gov">
+                  <field name="VAR">governance_ok</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="zero">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
+            </block>
+          </value>
+  
+          <!-- OUTPUT -->
+          <statement name="DO0">
+            <block type="text_print" id="print_fail">
+              <value name="TEXT">
+                <block type="text" id="fail_text">
+                  <field name="TEXT">
+                    Decision Governance Failure: Governance constraints violated.
+                  </field>
+                </block>
+              </value>
+            </block>
+          </statement>
+  
+        </block>
+      </next>
+    </block>
+  
+  </xml>
+  

@@ -20,7 +20,7 @@ class CapabilityValidator:
         if not p.exists():
             raise FileNotFoundError(f"normalized_blocks.json not found: {path}")
 
-        data = json.loads(p.read_text())
+        data = json.loads(p.read_text(encoding='utf-8'))
 
         if not isinstance(data, list):
             raise TypeError("normalized_blocks.json must be a list")

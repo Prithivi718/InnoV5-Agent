@@ -1,0 +1,18 @@
+goal1 = None
+goal2 = None
+goal3 = None
+
+def determine_dominant_goal():
+  global goal1, goal2, goal3
+  goal1 = ''
+  goal2 = ''
+  goal3 = ''
+  if goal1 > goal2 and goal1 > goal3:
+    print('goal1 dominates')
+  elif goal2 > goal1 and goal2 > goal3:
+    print('goal2 dominates')
+  else:
+    print('goal3 dominates')
+
+
+determine_dominant_goal()

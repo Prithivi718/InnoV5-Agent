@@ -1,0 +1,9 @@
+autonomy_status = None
+
+def check_irreversible_autonomy_failure(autonomy_status):
+  if autonomy_status == 0:
+    print('Autonomy permanently corrupted.')
+
+
+autonomy_status = 0
+check_irreversible_autonomy_failure(autonomy_status)

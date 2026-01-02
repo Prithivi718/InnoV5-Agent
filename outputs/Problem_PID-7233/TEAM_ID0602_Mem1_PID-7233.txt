@@ -1,0 +1,7 @@
+def plan_sustained_autonomy(autonomy_time):
+    if autonomy_time == 100:
+        print('Sustained autonomy planned.')
+
+# Example usage
+autonomy_time = int(input())
+plan_sustained_autonomy(autonomy_time)

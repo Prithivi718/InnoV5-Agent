@@ -1,0 +1,8 @@
+autonomy = None
+
+
+autonomy = 0
+if autonomy == 0:
+  print('Unsafe autonomy dominates.')
+else:
+  print('Safe autonomy operates.')

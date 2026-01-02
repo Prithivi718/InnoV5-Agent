@@ -1,0 +1,7 @@
+a = None
+
+a = int(input())
+if a == 100:
+    print('a is 100')
+else:
+    print('a is not 100')

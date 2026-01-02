@@ -1,0 +1,12 @@
+policy = None
+future_behavior = None
+
+def apply_policy_path_dependence(policy):
+  global future_behavior
+  if policy == 'early':
+    future_behavior = 'locked'
+    print(future_behavior)
+
+
+policy = ''
+apply_policy_path_dependence(policy)

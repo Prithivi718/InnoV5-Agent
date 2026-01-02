@@ -1,0 +1,49 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  
+    <!-- window = input -->
+    <block type="variables_set" id="set_window" x="100" y="100">
+      <field name="VAR">window</field>
+      <value name="VALUE">
+        <block type="math_number" id="input_window">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <next>
+  
+        <!-- if window != 0 -->
+        <block type="controls_if" id="if_window">
+          <mutation else="0"></mutation>
+  
+          <value name="IF0">
+            <block type="logic_compare" id="cmp_window">
+              <field name="OP">NEQ</field>
+              <value name="A">
+                <block type="variables_get" id="get_window">
+                  <field name="VAR">window</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="zero">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
+            </block>
+          </value>
+  
+          <!-- reset_policy() -->
+          <statement name="DO0">
+            <block type="text_print" id="print_reset">
+              <value name="TEXT">
+                <block type="text" id="reset_text">
+                  <field name="TEXT">Policy reset within window.</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+  
+        </block>
+      </next>
+    </block>
+  
+  </xml>
+  
