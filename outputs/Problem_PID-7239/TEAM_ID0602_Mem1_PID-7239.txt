@@ -1,6 +1,0 @@
-autonomyLevel = None
-
-
-autonomyLevel = 0
-if autonomyLevel == 50:
-  print('Autonomy Level is Advanced')

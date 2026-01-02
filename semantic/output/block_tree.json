@@ -1,7 +1,7 @@
 {
   "type": "variables_set",
   "fields": {
-    "VAR": "cooldown_duration"
+    "VAR": "drift"
   },
   "value_inputs": {
     "VALUE": {
@@ -15,27 +15,14 @@
   "next": {
     "type": "variables_set",
     "fields": {
-      "VAR": "current_time"
+      "VAR": "threshold"
     },
     "value_inputs": {
       "VALUE": {
-        "type": "math_arithmetic",
+        "type": "text_prompt_ext",
         "fields": {
-          "OP": "ADD"
-        },
-        "value_inputs": {
-          "A": {
-            "type": "variables_get",
-            "fields": {
-              "VAR": "cooldown_duration"
-            }
-          },
-          "B": {
-            "type": "math_number",
-            "fields": {
-              "NUM": "1"
-            }
-          }
+          "TYPE": "NUMBER",
+          "TEXT": ""
         }
       }
     },
@@ -45,19 +32,19 @@
         "IF0": {
           "type": "logic_compare",
           "fields": {
-            "OP": "GTE"
+            "OP": "GT"
           },
           "value_inputs": {
             "A": {
               "type": "variables_get",
               "fields": {
-                "VAR": "current_time"
+                "VAR": "drift"
               }
             },
             "B": {
-              "type": "math_number",
+              "type": "variables_get",
               "fields": {
-                "NUM": "0"
+                "VAR": "threshold"
               }
             }
           }
@@ -70,7 +57,7 @@
             "TEXT": {
               "type": "text",
               "fields": {
-                "TEXT": "Action can be performed"
+                "TEXT": "Explosion"
               }
             }
           }
@@ -81,7 +68,7 @@
             "TEXT": {
               "type": "text",
               "fields": {
-                "TEXT": "Action is on cooldown"
+                "TEXT": "No Explosion"
               }
             }
           }

@@ -1,6 +1,0 @@
-autonomy_status = None
-
-
-autonomy_status = ''
-if autonomy_status == 'failed':
-  print(1000)

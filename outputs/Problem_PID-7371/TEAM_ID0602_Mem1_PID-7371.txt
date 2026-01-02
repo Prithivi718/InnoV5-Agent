@@ -1,0 +1,20 @@
+S = None
+E = None
+T = None
+difference = None
+absolute_difference = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+S = float(text_prompt(''))
+E = float(text_prompt(''))
+T = float(text_prompt(''))
+difference = S - E
+absolute_difference = abs(difference)
+if absolute_difference < T:
+    print('Aligned')

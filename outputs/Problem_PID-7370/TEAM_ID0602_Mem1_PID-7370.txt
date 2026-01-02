@@ -1,0 +1,14 @@
+CurrentValue = None
+ExpirationThreshold = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+CurrentValue = text_prompt('')
+ExpirationThreshold = text_prompt('')
+if CurrentValue >= ExpirationThreshold:
+    print('valid')

@@ -1,0 +1,5 @@
+def prove_alignment():
+    print("Proving alignment formally is a process of ensuring that the system meets specified requirements.")
+    print("This involves formal verification techniques such as model checking, theorem proving, and static analysis.")
+
+prove_alignment()

@@ -1,0 +1,7 @@
+"python": """intent_path = int(input())
+regret = int(input())
+
+if intent_path == 1:
+    regret = 0
+
+print(regret)

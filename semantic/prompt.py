@@ -26,7 +26,6 @@ def system_prompt() -> str:
         "- Do NOT reference Python, Blockly, variables_set, or code concepts.\n\n"
 
         "================ LANGUAGE DEFINITION ================\n"
-
         "You may ONLY use the following constructs:\n\n"
 
         "1) inputs:\n"
@@ -55,12 +54,16 @@ def system_prompt() -> str:
 
         "================ PREFERRED PLANNING GUIDELINES ================\n"
         "(These improve correctness but do not change validity)\n\n"
-
         "- Prefer direct translations of the problem statement.\n"
         "- Avoid unnecessary derived variables.\n"
         "- Avoid introducing arithmetic not implied by the problem.\n"
         "- For constraint-validation problems (e.g., triangle validity),\n"
         "  use the standard mathematical conditions directly.\n\n"
+
+        "================ SCHEMA RULE (MANDATORY) ================\n"
+        "- The 'condition' field must always be a condition group:\n"
+        "  { \"op\": \"and\" | \"or\", \"conditions\": [ ... ] }\n"
+        "- NEVER output a bare comparison as the condition.\n\n"
 
         "================ FAILURE MODE ================\n"
         "If the problem cannot be expressed using ONLY the constructs above,\n"
@@ -69,6 +72,7 @@ def system_prompt() -> str:
 
         "Violation of ANY absolute rule means failure."
     )
+
 
 
 def user_prompt(problem_text: str) -> str:

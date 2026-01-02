@@ -1,8 +1,0 @@
-window = None
-
-window = int(input())
-if window != 0:
-    reset_policy()
-
-def reset_policy():
-    print('Policy reset within window.')

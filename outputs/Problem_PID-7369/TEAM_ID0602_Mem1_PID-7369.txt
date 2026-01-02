@@ -9,6 +9,5 @@ def text_prompt(msg):
 
 
 drift = float(text_prompt(''))
-threshold = float(text_prompt(''))
 if drift > threshold:
-    print('Explosion')
+    print('Escalate')

@@ -1,0 +1,14 @@
+failure_count = None
+bankruptcy_threshold = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+failure_count = float(text_prompt(''))
+bankruptcy_threshold = float(text_prompt(''))
+if failure_count >= bankruptcy_threshold:
+    print('Bankruptcy')
