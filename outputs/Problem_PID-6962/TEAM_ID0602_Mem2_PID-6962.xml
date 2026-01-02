@@ -1,0 +1,149 @@
+<xml>
+    <block type="procedures_defreturn" id="b0" x="10" y="10">
+        <mutation>
+            <arg name="sensor_value"></arg>
+        </mutation>
+        <field name="NAME">filter_noise</field>
+        <statement name="STACK">
+            <block type="variables_set" id="b1" x="10" y="80">
+                <field name="VAR">noise</field>
+                <value name="VALUE">
+                    <block type="math_random_int" id="b2" x="10" y="150">
+                        <value name="MIN">
+                            <block type="math_number" id="b3">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                        <value name="MAX">
+                            <block type="math_number" id="b4">
+                                <field name="NUM">10</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="controls_if" id="b5" x="10" y="220">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                            <block type="logic_compare" id="b6">
+                                <field name="OP">NEQ</field>
+                                <value name="A">
+                                    <block type="variables_get" id="b7">
+                                        <field name="VAR">noise</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="math_number" id="b8">
+                                        <field name="NUM">5</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="controls_return" id="b9">
+                                <value name="VALUE">
+                                    <block type="math_arithmetic" id="b10">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                            <block type="variables_get" id="b11">
+                                                <field name="VAR">sensor_value</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="math_random_int" id="b12">
+                                                <value name="MIN">
+                                                    <block type="math_number" id="b13">
+                                                        <field name="NUM">1</field>
+                                                    </block>
+                                                </value>
+                                                <value name="MAX">
+                                                    <block type="math_number" id="b14">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                        <statement name="ELSE">
+                            <block type="controls_return" id="b15">
+                                <value name="VALUE">
+                                    <block type="variables_get" id="b16">
+                                        <field name="VAR">sensor_value</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+    <block type="controls_if" id="b17" x="10" y="400">
+        <mutation></mutation>
+        <value name="IF0">
+            <block type="logic_compare" id="b18">
+                <field name="OP">EQ</field>
+                <value name="A">
+                    <block type="text" id="b19">
+                        <field name="TEXT">__name__</field>
+                    </block>
+                </value>
+                <value name="B">
+                    <block type="text" id="b20">
+                        <field name="TEXT">__main__</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <statement name="DO0">
+            <block type="variables_set" id="b21">
+                <field name="VAR">sensor_value</field>
+                <value name="VALUE">
+                    <block type="text_prompt_ext" id="b22">
+                        <field name="TYPE">NUMBER</field>
+                        <field name="TEXT">Enter sensor value: </field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set" id="b23">
+                        <field name="VAR">filtered_value</field>
+                        <value name="VALUE">
+                            <block type="procedures_callreturn" id="b24">
+                                <mutation name="filter_noise">
+                                    <arg name="sensor_value"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get" id="b25">
+                                        <field name="VAR">sensor_value</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="text_print" id="b26">
+                                <value name="TEXT">
+                                    <block type="text_join" id="b27">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                            <block type="text" id="b28">
+                                                <field name="TEXT">Filtered Sensor Value: </field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="variables_get" id="b29">
+                                                <field name="VAR">filtered_value</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

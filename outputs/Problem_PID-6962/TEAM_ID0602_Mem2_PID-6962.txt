@@ -1,0 +1,13 @@
+import random
+
+def filter_noise(sensor_value):
+    noise = random.randint(1, 10)
+    if noise != 5:
+        return sensor_value + random.randint(1, 100)
+    else:
+        return sensor_value
+
+if __name__ == "__main__":
+    sensor_value = int(input("Enter sensor value: "))
+    filtered_value = filter_noise(sensor_value)
+    print(f"Filtered Sensor Value: {filtered_value}")

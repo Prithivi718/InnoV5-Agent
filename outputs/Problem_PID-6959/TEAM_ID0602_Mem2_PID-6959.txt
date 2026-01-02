@@ -1,0 +1,4 @@
+def evaluate_system():
+    print("System evaluation completed.")
+
+evaluate_system()

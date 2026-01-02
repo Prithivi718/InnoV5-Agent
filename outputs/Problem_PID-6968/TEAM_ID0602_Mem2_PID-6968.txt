@@ -1,0 +1,14 @@
+cooldown_duration = None
+current_time = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+cooldown_duration = float(text_prompt(''))
+current_time = cooldown_duration + 1
+if current_time >= 0:
+  print('Action can be performed')

@@ -1,0 +1,196 @@
+<xml>
+    <block type="procedures_defnoreturn" id="0" x="10" y="10">
+        <mutation>
+            <arg name="value"></arg>
+        </mutation>
+        <field name="NAME">adjust_heating</field>
+        <statement name="STACK">
+            <block type="text_print" id="1" x="10" y="80">
+                <value name="TEXT">
+                    <block type="text_join" id="2">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                            <block type="text" id="3">
+                                <field name="TEXT">Heating adjusted by </field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="variables_get" id="4">
+                                <field name="VAR">value</field>
+                            </block>
+                        </value>
+                        <value name="ADD2">
+                            <block type="text" id="5">
+                                <field name="TEXT"> degrees</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" id="6" x="10" y="150">
+        <mutation>
+            <arg name="value"></arg>
+        </mutation>
+        <field name="NAME">adjust_cooling</field>
+        <statement name="STACK">
+            <block type="text_print" id="7" x="10" y="220">
+                <value name="TEXT">
+                    <block type="text_join" id="8">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                            <block type="text" id="9">
+                                <field name="TEXT">Cooling adjusted by </field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="variables_get" id="10">
+                                <field name="VAR">value</field>
+                            </block>
+                        </value>
+                        <value name="ADD2">
+                            <block type="text" id="11">
+                                <field name="TEXT"> degrees</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" id="12" x="10" y="290">
+        <mutation>
+            <arg name="parameter"></arg>
+            <arg name="value"></arg>
+        </mutation>
+        <field name="NAME">environment_compensate</field>
+        <statement name="STACK">
+            <block type="controls_if" id="13" x="10" y="360">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                    <block type="logic_compare" id="14">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                            <block type="variables_get" id="15">
+                                <field name="VAR">parameter</field>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="text" id="16">
+                                <field name="TEXT">temperature</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO0">
+                    <block type="controls_if" id="17" x="10" y="430">
+                        <mutation elseif="1" else="1"></mutation>
+                        <value name="IF0">
+                            <block type="logic_compare" id="18">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                    <block type="variables_get" id="19">
+                                        <field name="VAR">value</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="math_number" id="20">
+                                        <field name="NUM">0</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="procedures_callnoreturn" id="21">
+                                <mutation name="adjust_heating">
+                                    <arg name="value"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get" id="22">
+                                        <field name="VAR">value</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                        <value name="IF1">
+                            <block type="logic_compare" id="23">
+                                <field name="OP">LT</field>
+                                <value name="A">
+                                    <block type="variables_get" id="24">
+                                        <field name="VAR">value</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="math_number" id="25">
+                                        <field name="NUM">0</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO1">
+                            <block type="procedures_callnoreturn" id="26">
+                                <mutation name="adjust_cooling">
+                                    <arg name="value"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="math_arithmetic" id="27">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                            <block type="variables_get" id="28">
+                                                <field name="VAR">value</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="math_number" id="29">
+                                                <field name="NUM">-1</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="variables_set" id="30" x="10" y="550">
+        <field name="VAR">parameter</field>
+        <value name="VALUE">
+            <block type="text_prompt_ext" id="31">
+                <field name="TYPE">TEXT</field>
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <next>
+            <block type="variables_set" id="32" x="10" y="620">
+                <field name="VAR">value</field>
+                <value name="VALUE">
+                    <block type="text_prompt_ext" id="33">
+                        <field name="TYPE">NUMBER</field>
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+                <next>
+                    <block type="procedures_callnoreturn" id="34" x="10" y="690">
+                        <mutation name="environment_compensate">
+                            <arg name="parameter"></arg>
+                            <arg name="value"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                            <block type="variables_get" id="35">
+                                <field name="VAR">parameter</field>
+                            </block>
+                        </value>
+                        <value name="ARG1">
+                            <block type="variables_get" id="36">
+                                <field name="VAR">value</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

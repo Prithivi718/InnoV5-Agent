@@ -1,0 +1,21 @@
+sensor1 = None
+sensor2 = None
+sensor_data = None
+
+def combine_sensors(sensor1, sensor2):
+  global sensor_data
+  if sensor1 == sensor2:
+    sensor_data = sensor1 + sensor2
+  else:
+    sensor_data = sensor1
+  print(sensor_data)
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+sensor1 = float(text_prompt(''))
+sensor2 = float(text_prompt(''))

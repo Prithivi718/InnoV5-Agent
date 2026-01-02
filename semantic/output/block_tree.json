@@ -1,0 +1,92 @@
+{
+  "type": "variables_set",
+  "fields": {
+    "VAR": "cooldown_duration"
+  },
+  "value_inputs": {
+    "VALUE": {
+      "type": "text_prompt_ext",
+      "fields": {
+        "TYPE": "NUMBER",
+        "TEXT": ""
+      }
+    }
+  },
+  "next": {
+    "type": "variables_set",
+    "fields": {
+      "VAR": "current_time"
+    },
+    "value_inputs": {
+      "VALUE": {
+        "type": "math_arithmetic",
+        "fields": {
+          "OP": "ADD"
+        },
+        "value_inputs": {
+          "A": {
+            "type": "variables_get",
+            "fields": {
+              "VAR": "cooldown_duration"
+            }
+          },
+          "B": {
+            "type": "math_number",
+            "fields": {
+              "NUM": "1"
+            }
+          }
+        }
+      }
+    },
+    "next": {
+      "type": "controls_if",
+      "value_inputs": {
+        "IF0": {
+          "type": "logic_compare",
+          "fields": {
+            "OP": "GTE"
+          },
+          "value_inputs": {
+            "A": {
+              "type": "variables_get",
+              "fields": {
+                "VAR": "current_time"
+              }
+            },
+            "B": {
+              "type": "math_number",
+              "fields": {
+                "NUM": "0"
+              }
+            }
+          }
+        }
+      },
+      "statement_inputs": {
+        "DO0": {
+          "type": "text_print",
+          "value_inputs": {
+            "TEXT": {
+              "type": "text",
+              "fields": {
+                "TEXT": "Action can be performed"
+              }
+            }
+          }
+        },
+        "ELSE": {
+          "type": "text_print",
+          "value_inputs": {
+            "TEXT": {
+              "type": "text",
+              "fields": {
+                "TEXT": "Action is on cooldown"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

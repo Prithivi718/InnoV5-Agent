@@ -1,0 +1,17 @@
+sensor_value = None
+
+def calibration_check(sensor_value):
+  if sensor_value == 1000:
+    print('Sensor calibrated: True')
+  else:
+    print('Sensor calibrated: False')
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+sensor_value = float(text_prompt(''))
+calibration_check(sensor_value)

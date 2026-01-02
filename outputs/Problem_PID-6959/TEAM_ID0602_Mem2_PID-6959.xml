@@ -1,0 +1,17 @@
+<xml>
+    <block type="procedures_defnoreturn" id="0" x="10" y="10">
+        <field name="NAME">evaluate_system</field>
+        <statement name="STACK">
+            <block type="text_print" id="1" x="10" y="80">
+                <value name="TEXT">
+                    <block type="text" id="2">
+                        <field name="TEXT">System evaluation completed.</field>
+                    </block>
+                </value>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_callnoreturn" id="3" x="10" y="150">
+        <mutation name="evaluate_system"></mutation>
+    </block>
+</xml>

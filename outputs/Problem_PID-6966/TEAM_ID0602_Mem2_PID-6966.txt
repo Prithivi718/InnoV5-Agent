@@ -1,0 +1,17 @@
+real_part = None
+
+def check_stability(real_part):
+  if real_part > 0:
+    print('Stable')
+  else:
+    print('Unstable')
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+real_part = float(text_prompt(''))
+check_stability(real_part)

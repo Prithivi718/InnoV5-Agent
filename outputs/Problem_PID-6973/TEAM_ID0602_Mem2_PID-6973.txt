@@ -1,0 +1,32 @@
+value = None
+parameter = None
+
+def adjust_heating(value):
+  global parameter
+  print(''.join([str(x) for x in ['Heating adjusted by ', value, ' degrees']]))
+
+def adjust_cooling(value):
+  global parameter
+  print(''.join([str(x2) for x2 in ['Cooling adjusted by ', value, ' degrees']]))
+
+def environment_compensate(parameter, value):
+  if parameter == 'temperature':
+    if value > 0:
+      adjust_heating(value)
+    elif value < 0:
+      adjust_cooling(value * -1)
+    else:
+      pass
+  else:
+    pass
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+parameter = text_prompt('')
+value = float(text_prompt(''))
+environment_compensate(parameter, value)

@@ -1,0 +1,65 @@
+{
+  "team_id": "TEAM_ID0602",
+  "problems": [
+    {
+      "problem_id": "PID-7228",
+      "description": "Opportunity Cost of Autonomy, Cost of autonomous choice."
+    },
+    {
+      "problem_id": "PID-7229",
+      "description": "Autonomous Stress Test Extended, Stress-test extreme autonomy."
+    },
+    {
+      "problem_id": "PID-7230",
+      "description": "Policy Reset Window, Reset only within window."
+    },
+    {
+      "problem_id": "PID-7231",
+      "description": "Decision Governance Failure, Governance constraints violated."
+    },
+    {
+      "problem_id": "PID-7232",
+      "description": "Behavior Drift Cascade, Drift propagates across decisions."
+    },
+    {
+      "problem_id": "PID-7233",
+      "description": "Autonomous Endurance Planning, Plan sustained autonomy."
+    },
+    {
+      "problem_id": "PID-7234",
+      "description": "Autonomous Endgame Optimization, Optimize final policy state."
+    },
+    {
+      "problem_id": "PID-7235",
+      "description": "Autonomous Collapse Detection, Detect autonomy collapse."
+    },
+    {
+      "problem_id": "PID-7236",
+      "description": "Recovery Cost After Autonomy Failure, Cost of recovery."
+    },
+    {
+      "problem_id": "PID-7237",
+      "description": "Goal Dominance Lock-In, One goal dominates permanently."
+    },
+    {
+      "problem_id": "PID-7238",
+      "description": "Unsafe Autonomy Dominance, Unsafe autonomy dominates."
+    },
+    {
+      "problem_id": "PID-7239",
+      "description": "Advanced Autonomous Verdict, Evaluate advanced autonomy."
+    },
+    {
+      "problem_id": "PID-7240",
+      "description": "Irreversible Autonomy Failure, Early decision permanently corrupts autonomy."
+    },
+    {
+      "problem_id": "PID-7241",
+      "description": "Autonomy Path Dependence, Early policy locks future behavior."
+    },
+    {
+      "problem_id": "PID-7242",
+      "description": "Delayed Autonomy Catastrophe, Minor early error causes late collapse."
+    }
+  ]
+}

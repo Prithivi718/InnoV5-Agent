@@ -1,0 +1,14 @@
+position = None
+velocity = None
+acceleration = None
+
+def estimate_physical_state(position, velocity, acceleration):
+  print('Position: ' + str(position))
+  print('Velocity: ' + str(velocity))
+  print('Acceleration: ' + str(acceleration))
+
+
+position = 10
+velocity = 20
+acceleration = 30
+estimate_physical_state(position, velocity, acceleration)
