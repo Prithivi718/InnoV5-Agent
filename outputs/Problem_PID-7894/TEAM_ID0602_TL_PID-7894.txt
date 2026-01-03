@@ -1,0 +1,13 @@
+import sys
+
+def check_pattern():
+    pattern = None
+    while True:
+        user_input = input()
+        if user_input == '1234':
+            pattern = '1234'
+    return pattern
+
+if __name__ == "__main__":
+    pattern = check_pattern()
+    print("Pattern lock-in detected.")

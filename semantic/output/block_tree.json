@@ -1,7 +1,7 @@
 {
   "type": "variables_set",
   "fields": {
-    "VAR": "StressLevel"
+    "VAR": "L"
   },
   "value_inputs": {
     "VALUE": {
@@ -15,7 +15,7 @@
   "next": {
     "type": "variables_set",
     "fields": {
-      "VAR": "Threshold"
+      "VAR": "R"
     },
     "value_inputs": {
       "VALUE": {
@@ -32,19 +32,19 @@
         "IF0": {
           "type": "logic_compare",
           "fields": {
-            "OP": "GT"
+            "OP": "GTE"
           },
           "value_inputs": {
             "A": {
               "type": "variables_get",
               "fields": {
-                "VAR": "StressLevel"
+                "VAR": "L"
               }
             },
             "B": {
               "type": "variables_get",
               "fields": {
-                "VAR": "Threshold"
+                "VAR": "R"
               }
             }
           }
@@ -57,7 +57,7 @@
             "TEXT": {
               "type": "text",
               "fields": {
-                "TEXT": "Stress Exceeded"
+                "TEXT": "learning recoverability is achieved"
               }
             }
           }
@@ -68,7 +68,7 @@
             "TEXT": {
               "type": "text",
               "fields": {
-                "TEXT": "Stress Within Limits"
+                "TEXT": "learning recoverability is not achieved"
               }
             }
           }

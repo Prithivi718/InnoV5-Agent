@@ -1,0 +1,14 @@
+LearningRate = None
+PerformanceMetric = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+LearningRate = text_prompt('')
+PerformanceMetric = text_prompt('')
+if LearningRate > 0.1 and PerformanceMetric < 0.5:
+    print('Avoid learning cliff')

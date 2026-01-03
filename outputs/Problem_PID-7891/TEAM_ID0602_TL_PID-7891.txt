@@ -1,5 +1,5 @@
 L = None
-R = None
+T = None
 
 def text_prompt(msg):
   try:
@@ -9,6 +9,6 @@ def text_prompt(msg):
 
 
 L = float(text_prompt(''))
-R = float(text_prompt(''))
-if L >= R:
-    print('learning recoverability is achieved')
+T = float(text_prompt(''))
+if L == T:
+    print('Stable Equilibrium')

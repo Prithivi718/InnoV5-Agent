@@ -1,0 +1,14 @@
+early_updates = None
+final_constraints = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+early_updates = float(text_prompt(''))
+final_constraints = float(text_prompt(''))
+if early_updates >= final_constraints:
+    print('Constraints bind')

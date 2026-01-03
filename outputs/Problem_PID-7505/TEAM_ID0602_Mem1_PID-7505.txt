@@ -1,9 +1,0 @@
-role = None
-
-def handle_role(role):
-  if role == 'collaborator':
-    print('Collaboration with role: collaborator')
-
-
-role = input()
-handle_role(role)

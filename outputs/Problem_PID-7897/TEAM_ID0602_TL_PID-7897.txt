@@ -1,0 +1,14 @@
+error_suppression_level = None
+delay_time = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+error_suppression_level = float(text_prompt(''))
+delay_time = float(text_prompt(''))
+if error_suppression_level > 50 and delay_time > 0:
+    print('Error Exploded')

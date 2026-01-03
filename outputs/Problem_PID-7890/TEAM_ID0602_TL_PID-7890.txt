@@ -1,0 +1,14 @@
+V = None
+E = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+V = float(text_prompt(''))
+E = float(text_prompt(''))
+if E <= 0:
+    print('Option expired')

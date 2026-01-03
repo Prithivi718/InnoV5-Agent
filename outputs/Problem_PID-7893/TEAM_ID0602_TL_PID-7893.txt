@@ -1,0 +1,12 @@
+KnowledgeLevel = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+KnowledgeLevel = float(text_prompt(''))
+if KnowledgeLevel > 0:
+    print('PreserveKnowledge = True')

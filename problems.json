@@ -2,64 +2,64 @@
   "team_id": "TEAM_ID0602",
   "problems": [
     {
-      "problem_id": "PID-7499",
-      "description": "Trust Hedging Portfolio, Hedge against future breakdowns."
+      "problem_id": "PID-7889",
+      "description": "Nonlinear Error Amplification: Errors grow superlinearly."
     },
     {
-      "problem_id": "PID-7500",
-      "description": "Collaboration Reinvestment, Reinvest effort to rebuild trust."
+      "problem_id": "PID-7890",
+      "description": "Learning Option Valuation: Value learning paths that expire."
     },
     {
-      "problem_id": "PID-7501",
-      "description": "Trust Shock Propagation, Shock propagates across roles."
+      "problem_id": "PID-7891",
+      "description": "Stable Learning Equilibrium: Reach stable adaptive equilibrium."
     },
     {
-      "problem_id": "PID-7502",
-      "description": "Endgame Collaboration Binding, Final rules bind early handoffs."
+      "problem_id": "PID-7892",
+      "description": "Learning Cliff Avoidance: Avoid irreversible learning cliffs."
     },
     {
-      "problem_id": "PID-7503",
-      "description": "Trust Recoverability Frontier, Compute recoverability frontier."
+      "problem_id": "PID-7893",
+      "description": "Endgame Knowledge Reserves: Preserve knowledge for final phase."
     },
     {
-      "problem_id": "PID-7504",
-      "description": "Governance Override for Collaboration, Override to restore collaboration."
+      "problem_id": "PID-7894",
+      "description": "Pattern Lock-In: One learned pattern dominates permanently."
     },
     {
-      "problem_id": "PID-7505",
-      "description": "Counterfactual Collaboration Replay, Replay collaboration with altered roles."
+      "problem_id": "PID-7895",
+      "description": "Learning Debt Restructuring: Resolve accumulated learning debt."
     },
     {
-      "problem_id": "PID-7506",
-      "description": "Trust Insurance Pool, Pool mitigates catastrophic trust loss."
+      "problem_id": "PID-7896",
+      "description": "Stability Basin Steering: Steer learning into stable basin."
     },
     {
-      "problem_id": "PID-7507",
-      "description": "Collaboration Stability Under Stress, Test collaboration under stress."
+      "problem_id": "PID-7897",
+      "description": "Delayed Error Explosion: Suppressed errors explode late."
     },
     {
-      "problem_id": "PID-7508",
-      "description": "Endgame Opportunity Cost, Cost of avoided collaboration choice."
+      "problem_id": "PID-7898",
+      "description": "Formal Learning Proof: Prove stability and safety."
     },
     {
-      "problem_id": "PID-7509",
-      "description": "Multi-Human Coordination Game, Coordinate multiple humans with AI."
+      "problem_id": "PID-7899",
+      "description": "Learning Hedge Portfolio: Hedge against harmful learning."
     },
     {
-      "problem_id": "PID-7510",
-      "description": "Latent Collaboration Effects, Latent issues surface late."
+      "problem_id": "PID-7900",
+      "description": "Learning Reinvestment: Reinvest effort to restore quality."
     },
     {
-      "problem_id": "PID-7511",
-      "description": "Shared Accountability Proof, Prove accountability formally."
+      "problem_id": "PID-7901",
+      "description": "Error Shock Propagation: Error propagates across modules."
     },
     {
-      "problem_id": "PID-7512",
-      "description": "Collaboration Resilience Index, Compute resilience to breakdown."
+      "problem_id": "PID-7902",
+      "description": "Endgame Learning Constraints: Final constraints bind early updates."
     },
     {
-      "problem_id": "PID-7513",
-      "description": "Collaboration Stress Horizon, Stress-test full horizon."
+      "problem_id": "PID-7903",
+      "description": "Recoverability Frontier: Compute learning recoverability."
     }
   ]
 }

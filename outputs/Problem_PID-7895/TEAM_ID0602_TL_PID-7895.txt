@@ -1,0 +1,12 @@
+LearningDebt = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+LearningDebt = text_prompt('')
+if LearningDebt > 0:
+    print('Restructure Debt')

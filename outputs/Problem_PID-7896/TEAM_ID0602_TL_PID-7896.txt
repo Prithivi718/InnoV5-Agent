@@ -1,0 +1,14 @@
+StabilityScore = None
+Threshold = None
+
+def text_prompt(msg):
+  try:
+    return raw_input(msg)
+  except NameError:
+    return input(msg)
+
+
+StabilityScore = text_prompt('')
+Threshold = text_prompt('')
+if StabilityScore >= Threshold:
+    print('Steer into stable basin')
